@@ -13,7 +13,6 @@ class TrendingContainer extends React.Component
             count: 0,
         }
         this.refresh()
-        
     } 
     componentDidMount() {
         //  function flechée () => { }
