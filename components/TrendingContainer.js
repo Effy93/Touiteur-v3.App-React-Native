@@ -2,7 +2,7 @@ import React from 'react';
 import { getTrendingWords } from '../TouitAPI';
 import Trending from './Trending';
 
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 
 class TrendingContainer extends React.Component 
 {
@@ -16,7 +16,6 @@ class TrendingContainer extends React.Component
     } 
     componentDidMount() {
         //  function flechée () => { }
-       
         setInterval( () => this.refresh(), 5000);
     }
     refresh() {

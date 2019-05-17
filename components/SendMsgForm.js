@@ -1,6 +1,6 @@
 import React from 'react';
 import { sendMessage } from '../TouitAPI';
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, Image } from 'react-native';
 
 class SendMsgForm extends React.Component 
 {
@@ -20,6 +20,7 @@ class SendMsgForm extends React.Component
                     'Succès',
                     'Message envoyé',
                   );
+                  this.setState( { message : "" })
             } else {
                 Alert.alert(
                     'Une erreur est survenue',
@@ -28,21 +29,31 @@ class SendMsgForm extends React.Component
             }
         });
     }
+
+    changeMessage = (value) => this.setState( {message : value }) ;
+
     render() {
+        const { message } = this.state
         return(
-            <View style={styles.container} >
-                <TextInput 
-                    style={styles.input}
-                    placeholder="Votre pseudo"
-                    onChangeText={(name) => this.setState({name})}   
-                />
-                <TextInput 
-                    style={styles.input}
-                    placeholder="Votre message" 
-                    onChangeText={(message) => this.setState({message})}
-                />
+            <View style={styles.containerRow}>
+                <View style={styles.containerInput}>
+                    <TextInput 
+                        style={styles.input}
+                        placeholder="Votre pseudo"
+                        placeholderTextColor= "#fff"
+                        onChangeText={(name) => this.setState({name})}   
+                    />
+                    <TextInput 
+                        style={styles.input}
+                        value={message}
+                        placeholder="Votre message" 
+                        placeholderTextColor= "#fff"
+                        onChangeText={this.changeMessage}
+                        multiline={true}
+                    />
+                </View>
                 <TouchableHighlight style={styles.bouton} onPress={this.submit}>
-                    <Text style={styles.boutonText}> Envoyer </Text>
+                    <Image style={styles.arrow} source={require('../assets/arrow2.png')} />
                 </TouchableHighlight>
             </View>
         );
@@ -52,39 +63,41 @@ class SendMsgForm extends React.Component
 export default SendMsgForm;
 
 const styles = StyleSheet.create ({
-    container: {
+    containerRow: {
+        flexDirection: "row",
         borderWidth: 2,
         borderColor: "#8E6B2E",
         borderRadius: 10,
         margin: 4,
-        padding: 10,
+        padding: 8,
         backgroundColor: "#42393C",
         alignItems: "center",
-        height: 150,
+        height: 140,
+    },
+    containerInput: {
+        flexGrow: 2,
+        alignItems: "center"
     },
     bouton: {
-        backgroundColor: "#261F22",
-        paddingHorizontal: 40,
-        paddingVertical: 4,
-        marginVertical: 10,
-        borderRadius: 20,
-        borderColor: '#fff',
-        borderWidth: 2,
-        borderStyle: "solid",
-        borderColor: '#fff',
+        flex: 1,
+        alignItems : "center",
     },
-    boutonText: {
-        color: "#fff"
+    arrow: {
+        width: 40,
+        height: 40,
+        alignItems : "flex-start",
     },
     input: {
-        width: "100%",
         borderColor: 'gray',
         borderWidth: 1,
         color: "#fff",
         backgroundColor: "#261F22",
         margin: 4,
+        paddingHorizontal: 10,
         height: 40,
-        fontSize: 20,
-    }
+        fontSize: 18,
+        width: 300,
+    },
+   
     
 });

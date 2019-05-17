@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 
 class Trending extends React.Component {
     render() {
         const {trend, count} = this.props
         return(
             <View style={styles.trendContainer}>
-                <Text style={styles.word}> #{trend} </Text>
-                <Text style={styles.word}> {count} </Text>
+                <TouchableOpacity onPress={() => Alert.alert(
+                 trend,`Nb occurence : ${count}`,
+                 [ { text: 'retour' },],
+                 { cancelable: true })}>
+                 <Text style={styles.word}> #{trend} </Text>
+               </TouchableOpacity>
+
             </View>
         );
     }
