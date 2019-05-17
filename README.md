@@ -1,5 +1,5 @@
 # Touiteur v3 (App IOS/Android with React Native) : Mise en route
-- Necessite :
+- Nécessite :
     - Sur mac : émulateur d'iphone => installez **Xcode** depuis l'app-store.
     - Sur smartphone : appli Expo => installez **Expo** depuis le Store.
     - Npm
