@@ -1,4 +1,6 @@
-# Touiteur v3 (App IOS/Android with React Native) : Mise en route
+# Touiteur v3 (App IOS/Android with React Native) Mise en route
+<img class="logo" src="https://user-images.githubusercontent.com/40206938/57961741-1a0d6080-7911-11e9-963e-40d1a2bd306c.gif" alt="logo cuick, touit, touiteur" width="60%" height="200px">
+
 - Nécessite :
     - Sur mac : émulateur d'iphone => installez **Xcode** depuis l'app-store.
     - Sur smartphone : appli Expo => installez **Expo** depuis le Store.
