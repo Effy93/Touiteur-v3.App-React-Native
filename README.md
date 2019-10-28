@@ -34,3 +34,6 @@ Après avoir lancer la commande expo start, [l'url](http://localhost:19002/) se 
 *RAPPEL: Pour lancer l'émulateur il faut avoir installé Expo!*
 
 Scanner le QRCode depuis Expo.
+
+
+<img class="logo" src="https://user-images.githubusercontent.com/40206938/67711791-06d3e600-f9c3-11e9-8921-45a07fe4e4f4.png" alt="logo cuick, touit, touiteur" width="40%" height="40%">
